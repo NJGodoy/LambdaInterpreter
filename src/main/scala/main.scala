@@ -4,5 +4,4 @@ def main(): Unit = {
   val tokens = lector.leerExpresion(expr)
   println(tokens)
   val AST = interprete.interpretarExpresion(tokens)
-  println(AST)
 }
