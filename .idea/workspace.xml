@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="089a2038-f072-4850-8cbd-d92d5a623853" name="Changes" comment="Prueba">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/reductor/Reductor.scala" afterDir="false" />
+    <list default="true" id="089a2038-f072-4850-8cbd-d92d5a623853" name="Changes" comment="Agregado reductor con sus funcionalidades">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/interfazUsuario.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/build.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/build.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/interprete/Parser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/interprete/Parser.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/reductor/Reductor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/reductor/Reductor.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +117,9 @@
       <option name="presentableId" value="Default" />
       <updated>1717216102079</updated>
       <workItem from="1717216103134" duration="12494000" />
-      <workItem from="1717381496346" duration="7528000" />
+      <workItem from="1717381496346" duration="11431000" />
+      <workItem from="1717394742790" duration="321000" />
+      <workItem from="1717395097465" duration="7483000" />
     </task>
     <task id="LOCAL-00001" summary="Primera versión de Lexer y Parcer">
       <option name="closed" value="true" />
@@ -132,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717231376035</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Agregado reductor con sus funcionalidades">
+      <option name="closed" value="true" />
+      <created>1717389597841</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717389597843</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +177,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -179,6 +192,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primera versión de Lexer y Parcer" />
     <MESSAGE value="Prueba" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prueba" />
+    <MESSAGE value="Agregado reductor con sus funcionalidades" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregado reductor con sus funcionalidades" />
   </component>
 </project>

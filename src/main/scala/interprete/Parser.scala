@@ -39,3 +39,16 @@ def graficarArbol(expresion: Expresion, espacios: String = "", esIzquierdo: Bool
       graficarArbol(e2, espacios + (if (esIzquierdo) "│  " else "   "), false)
   }
 }
+
+def imprimirExpresion(expresion: Expresion): Unit = {
+  def obtenerString(expresion: Expresion): String = {
+    expresion match {
+      case Variable(nombre) => nombre.toString
+      case Abstraccion(param, cuerpo) =>
+        "λ" + param + "." + obtenerString(cuerpo)
+      case Aplicacion(e1, e2) =>
+        obtenerString(e1) + " " + obtenerString(e2)
+    }
+  }
+  println(obtenerString(expresion))
+}

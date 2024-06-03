@@ -20,7 +20,7 @@ def reducirCallByName(expresion: Expresion): Expresion = {
       reducirCallByName(reemplazar(cuerpo, param, e2))
     case Aplicacion(e1, e2) =>
       val e1Reducido = reducirCallByName(e1)
-      e1Reducido match {//tuve que agregar por que si no reducia solo la aplicación más externa
+      e1Reducido match {
         case Abstraccion(param, cuerpo) => reducirCallByName(Aplicacion(e1Reducido, e2))
         case _ => Aplicacion(e1Reducido, e2)
       }
@@ -34,8 +34,8 @@ def reducirCallByValue(expresion: Expresion, steps: Int = 500): Expresion = {
       case Variable(name) => Variable(name)
       case Abstraccion(param, cuerpo) => Abstraccion(param, reducirCallByValue(cuerpo, steps - 1))
       case Aplicacion(e1, e2) =>
-        val e1Reducido = reducirCallByValue(e1, steps - 1)
         val e2Reducido = reducirCallByValue(e2, steps - 1)
+        val e1Reducido = reducirCallByValue(e1, steps - 1)
         e1Reducido match {
           case Abstraccion(param, cuerpo) => reducirCallByValue(reemplazar(cuerpo, param, e2Reducido), steps - 1)
           case _ => Aplicacion(e1Reducido, e2Reducido)
