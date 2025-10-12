@@ -9,22 +9,35 @@ def interpretarExpresion(ecuacion: List[Token | Char]): Expresion = {
   res
 }
 def _interpretarExpresionRec(tokens: List[Token | Char]): (Expresion, List[Token | Char]) = {
-  tokens match {
-    case Nil => throw new IllegalArgumentException("Token Invalido")
+  def leerTermino(tokens: List[Token | Char]): (Expresion, List[Token | Char]) =
+    val sinEspacios = tokens.dropWhile(_ == Token.SPACE)
+    sinEspacios match {
     case Token.LPAR :: xs =>
-      val (e1, siguiente) = _interpretarExpresionRec(xs)
-      val (e2, resto) = _interpretarExpresionRec(siguiente)
-      (Aplicacion(e1, e2), resto.tail)
-    case Token.LAMBDA :: (param : Char) :: Token.DOT :: xs =>
+      val (expr, resto) = _interpretarExpresionRec(xs)
+      resto match {
+        case Token.RPAR :: tail => (expr, tail)
+        case _ => throw new IllegalArgumentException("Falta paréntesis de cierre")
+      }
+    case Token.LAMBDA :: (param: Char) :: Token.DOT :: xs =>
       val (cuerpo, resto) = _interpretarExpresionRec(xs)
       (Abstraccion(param, cuerpo), resto)
-    case Token.SPACE :: xs =>
-      _interpretarExpresionRec(xs)
-    case (variable : Char) :: resto =>
-      (Variable(variable), resto)
-    case _ => throw new IllegalArgumentException("Argumento Invalido.")
+    case (v: Char) :: resto =>
+      (Variable(v), resto)
+    case _ =>
+      throw new IllegalArgumentException("Token inesperado")
   }
+
+  var (expr, resto) = leerTermino(tokens)
+
+  while (resto.nonEmpty && resto.head != Token.RPAR) {
+    val (nextExpr, tail) = leerTermino(resto)
+    expr = Aplicacion(expr, nextExpr)
+    resto = tail
+  }
+
+  (expr, resto)
 }
+
 def graficarArbol(expresion: Expresion, espacios: String = "", esIzquierdo: Boolean = true): Unit = {
   expresion match {
     case Variable(nombre) =>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="InterpreteLambda">
+    <option name="separateProdTestSources" value="true" />
+    <profile name="sbt 1" modules="InterpreteLambda" />
+    <profile name="sbt 2" modules="InterpreteLambda.main,InterpreteLambda.test">
       <parameters>
         <parameter value="-encoding" />
         <parameter value="UTF-8" />
